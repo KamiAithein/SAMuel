@@ -1,4 +1,6 @@
 # PREREQ
+## LINUX
+This is built for linux. It will not work on Windows without manual configuration of the source code.
 ## libsteam_api.so
 `find /home -type f -name libsteam_api.so`
 
@@ -19,6 +21,12 @@ Set the env variable STEAM_ID={STEAM_ID}
 ```
 cargo build --release
 ```
+
+# NOTES
+Also have env variable `DATA_DIR`, this is where the cached games list goes. There is an api request limit for the steam web api, I found it useful to cache the games list. 
+You can update the games list with `samuel update_cache`.
+
+The default value of `DATA_DIR` is `$HOME/.local/share/samuel`
 
 # RUN
 `samuel games list`
