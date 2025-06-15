@@ -1,6 +1,8 @@
 # PREREQ
 ## LINUX
 This is built for linux. It will not work on Windows without manual configuration of the source code.
+
+Steam must be RUNNING and LOGGED IN
 ## libsteam_api.so
 `find /home -type f -name libsteam_api.so`
 
