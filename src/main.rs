@@ -3,7 +3,7 @@ mod steam;
 
 use clap::{Args, Parser, Subcommand};
 use dotenv::dotenv;
-use std::{env, path::Path};
+use std::{env, fs, path::Path};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -101,6 +101,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let data_dir = Path::new(&data_dir_s);
     let cache_path = data_dir.join("samuel.cache");
+
+    fs::create_dir_all(&data_dir).expect("Could not create data dir!");
 
     let args = CliArgs::parse();
 
